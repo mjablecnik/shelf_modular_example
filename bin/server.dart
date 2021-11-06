@@ -1,28 +1,13 @@
-import 'dart:io';
+import 'package:shelf/shelf_io.dart' as io;
+import 'package:shelf_modular/shelf_modular.dart';
 
-import 'package:shelf/shelf.dart';
-import 'package:shelf/shelf_io.dart';
-import 'package:shelf_router/shelf_router.dart';
+import 'module.dart';
 
-final _router = Router()
-  ..get('/', _rootHandler)
-  ..get('/echo/<message>', _echoHandler);
+void main(List<String> arguments) async {
+  final s = Stopwatch()..start();
 
-Response _rootHandler(Request req) {
-  return Response.ok('Hello, World!\n');
-}
-
-Response _echoHandler(Request request) {
-  final message = request.params['message'];
-  return Response.ok('$message\n');
-}
-
-void main(List<String> args) async {
-  final ip = InternetAddress.anyIPv4;
-
-  final _handler = Pipeline().addMiddleware(logRequests()).addHandler(_router);
-
-  final port = int.parse(Platform.environment['PORT'] ?? '9000');
-  final server = await serve(_handler, ip, port);
-  print('Server listening on port ${server.port}');
+  final server = await io.serve(Modular(module: AppModule()), '0.0.0.0', 3000);
+  s.stop();
+  print('Server started in ${s.elapsed.inMilliseconds}ms');
+  print('Address: ${server.address.address}:${server.port}');
 }

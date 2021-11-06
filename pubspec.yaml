@@ -10,6 +10,7 @@ environment:
 dependencies:
   args: ^2.0.0
   shelf: ^1.1.0
+  shelf_modular: ^1.0.0
   shelf_router: ^1.0.0
 
 dev_dependencies:

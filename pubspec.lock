@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  characters:
+    dependency: transitive
+    description:
+      name: characters
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   charcode:
     dependency: transitive
     description:
@@ -176,6 +183,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  modular_core:
+    dependency: transitive
+    description:
+      name: modular_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
+  modular_interfaces:
+    dependency: transitive
+    description:
+      name: modular_interfaces
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.4"
   node_preamble:
     dependency: transitive
     description:
@@ -218,6 +239,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  shelf_modular:
+    dependency: "direct main"
+    description:
+      name: shelf_modular
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   shelf_packages_handler:
     dependency: transitive
     description:
