@@ -8,6 +8,9 @@ import 'module.dart';
 void main(List<String> arguments) async {
   final s = Stopwatch()..start();
   withHotreload(() async {
+
+    Modular.reassemble();
+
     final handler = Pipeline()
         .addMiddleware(logRequests())
         .addHandler(Modular(module: AppModule()));
